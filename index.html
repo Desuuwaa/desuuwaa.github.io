@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url(img/pixel.jpeg);
+                background-size: cover;
+                background-repeat: none;
+                background-position: center;
+            }
+
+            .container {
+                width: 350px;
+                height: 350px;
+                border: 2px solid white;
+                border-radius: 20px;
+                padding: 0 20px;
+                backdrop-filter: blur(15px);
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                transition: 0.3s;
+            }
+
+            header {
+                color: #fff;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                padding: 30px 0;
+            }
+
+            .input-field-username input {
+                width: 100%;
+                height: 45px;
+                border: none;
+                border-radius: 20px;
+                color: white;
+                font-size: 15px;
+                padding: 0 23px;
+                margin-bottom: 27px;
+                outline: none;
+                background-color: rgba(255, 255, 255, 0.1);
+                box-sizing: border-box;
+            }
+
+            .input-field-password input {
+                width: 100%;
+                height: 45px;
+                border: none;
+                border-radius: 20px;
+                color: white;
+                font-size: 15px;
+                padding: 0 23px;
+                margin-bottom: 10px;
+                outline: none;
+                background-color: rgba(255, 255, 255, 0.1);
+                box-sizing: border-box;
+            }
+
+            .input-field-username .label-username {
+                position: absolute;
+                top: 31%;
+                left: 12%;
+                cursor: pointer;
+                color: white;
+                transition: 0.5s;
+            }
+
+            .input-field-password .label-password {
+                position: absolute;
+                top: 51.5%;
+                left: 12%;
+                cursor: pointer;
+                color: white;
+                transition: 0.5s;
+            }
+
+            .input-field-username input:focus ~ label,
+            .input-field-username input:valid ~ label {
+                top: 23%;
+                left: 8%;
+                color: #6f6d6d;
+                font-size: 12px;
+            }
+
+            .input-field-password input:focus ~ label,
+            .input-field-password input:valid ~ label {
+                top: 44%;
+                left: 8%;
+                color: #6f6d6d;
+                font-size: 12px;
+            }
+
+            #checkbox-password {
+                position: absolute;
+                top: 52.5%;
+                left: 88%;
+            }
+
+            .submit {
+                width: 100%;
+                height: 45px;
+                font-size: 15px;
+                outline: none;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                color: rgba(255, 255, 255);
+                background: rgba(0, 0, 0, 0.7);
+                transition: .5s;
+            }
+
+            .submit:hover {
+                background-color: rgba(255, 255, 255, 0.7);
+                color: rgb(0, 0, 0);
+            }
+
+            .two-col {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                font-size: small;
+                color: white;
+                margin-top: 10px;
+            }
+
+            .one {
+                display: flex;
+            }
+
+            label a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .checkbox {
+                cursor: pointer;
+            }
+    </style>
+
+    </head>
+    <body>
+        
+        <div class="box">
+            <div class="container">
+                <form action="" method="">
+                    <div class="header">
+                        <header>Login</header>
+                    </div>
+                    <div class="input-field-username">
+                        <input type="text" name="username" id="username" class="username" autocomplete="off" required>
+                        <label for="username" class="label-username">Username</label>
+                    </div>
+                    <div class="input-field-password">
+                        <input type="password" name="password" id="password" autocomplete="off" required>
+                        <label for="password" class="label-password">Password</label>
+                    </div>
+                    <input type="checkbox" id="checkbox-password">
+                    <div class="input-field-button">
+                        <button type="submit" name="submit" class="submit">Login</button>
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox" class="checkbox">Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label for=""><a href="">Forgot Password?</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            const checkboxPassword = document.getElementById('checkbox-password');
+            const password = document.getElementById('password');
+            function showPassword() {
+                if( password.type == 'password') {
+                    password.type = 'text';
+                } else {
+                    password.type = 'password';
+                }
+            }
+            checkboxPassword.onclick = showPassword;
+        </script>
+    </body>
+</html>
